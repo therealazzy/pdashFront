@@ -61,7 +61,8 @@ export default function Dashboard() {
             backgroundColor: '#1a1a1a',
             color: 'rgba(255, 255, 255, 0.87)',
             maxWidth: '1400px',
-            margin: '0 auto'
+            margin: '0 auto',
+            userSelect: 'none'  // Prevent text selection globally
         }}>
             {/* Left section for launchers */}
             <div style={{ flex: 1, minWidth: '300px' }}>

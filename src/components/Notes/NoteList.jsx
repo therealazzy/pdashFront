@@ -7,7 +7,8 @@ export default function NoteList({ notes, onDelete }) {
         <ul style={{ 
             listStyle: 'none',  // Remove default list dots
             padding: 0, 
-            minWidth: '300px'   // Set minimum width for better layout
+            minWidth: '300px',   // Set minimum width for better layout
+            userSelect: 'none'  // Prevent text selection for the list
         }}>
             {/* Map through each note and create a card */}
             {notes.map(note => (
@@ -29,14 +30,16 @@ export default function NoteList({ notes, onDelete }) {
                             <h3 style={{ 
                                 margin: '0 0 0.5rem 0', 
                                 color: 'rgba(255, 255, 255, 0.87)',
-                                fontSize: '1.1rem'
+                                fontSize: '1.1rem',
+                                userSelect: 'none'  // Prevent title selection
                             }}>
                                 {note.title}
                             </h3>
                             <p style={{ 
                                 margin: 0, 
                                 color: 'rgba(255, 255, 255, 0.7)',
-                                whiteSpace: 'pre-wrap'  // Preserve whitespace and line breaks
+                                whiteSpace: 'pre-wrap',  // Preserve whitespace and line breaks
+                                userSelect: 'text'  // Allow content selection
                             }}>
                                 {note.content}
                             </p>
@@ -52,7 +55,8 @@ export default function NoteList({ notes, onDelete }) {
                                 borderRadius: '4px',
                                 cursor: 'pointer',
                                 fontSize: '0.9rem',
-                                flexShrink: 0  // Prevent button from shrinking
+                                flexShrink: 0,  // Prevent button from shrinking
+                                userSelect: 'none'  // Prevent button text selection
                             }}
                         >
                             Delete
